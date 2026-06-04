@@ -33,6 +33,9 @@ config/*.json
 instagram-state.json
 twitter-creds.json
 
+# Local outbound/sales notes (sensitive — prospect names, contacts, internal positioning)
+outbound-runbook.md
+
 # Environment
 .env
 .env.local
