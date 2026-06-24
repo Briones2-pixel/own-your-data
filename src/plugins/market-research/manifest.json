@@ -1,0 +1,23 @@
+{
+    "id": "market-research",
+    "name": "Market Research (FEC)",
+    "icon": "📈",
+    "description": "Tracks the family entertainment center sector: public valuations, SEC filings, news, and broker research, flagging items for review.",
+    "version": "1.0.0",
+    "folder": "market-research",
+    "scheduler": {
+        "mode": "interval",
+        "defaultIntervalHours": 12,
+        "defaultRandomMinutes": 45,
+        "cmd": [
+            "get",
+            "process",
+            "push"
+        ]
+    },
+    "commands": {
+        "get": "ts-node src/plugins/market-research/get.ts",
+        "process": "ts-node src/plugins/market-research/process.ts",
+        "push": "ts-node src/plugins/market-research/push.ts"
+    }
+}

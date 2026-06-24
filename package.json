@@ -36,6 +36,9 @@
     "transcript:process": "ts-node src/plugins/transcripts/process.ts",
     "transcript:push": "ts-node src/plugins/transcripts/push.ts",
     "github-backup:push": "ts-node src/plugins/github-backup/push.ts",
+    "market:get": "ts-node src/plugins/market-research/get.ts",
+    "market:process": "ts-node src/plugins/market-research/process.ts",
+    "market:push": "ts-node src/plugins/market-research/push.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
