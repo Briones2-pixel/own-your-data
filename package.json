@@ -40,6 +40,7 @@
     "market:process": "ts-node src/plugins/market-research/process.ts",
     "market:push": "ts-node src/plugins/market-research/push.ts",
     "market:digest": "ts-node src/plugins/market-research/digest.ts",
+    "market:signals": "ts-node src/plugins/market-research/signals.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
