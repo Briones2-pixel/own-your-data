@@ -63,6 +63,8 @@ async function main() {
     const config = await loadConfig();
     const paths = getResolvedPaths(config);
     const cfg = mergeWithDefaults((await loadPluginConfig<MarketResearchPluginConfig>('market-research')) || undefined);
+    // Allow CI / env to supply the SEC EDGAR contact User-Agent without editing config.
+    if (process.env.MR_SEC_UA) cfg.secUserAgent = process.env.MR_SEC_UA;
 
     const rawDir = path.join(paths.rawDumps, 'market-research');
     const researchDir = path.join(rawDir, 'research');

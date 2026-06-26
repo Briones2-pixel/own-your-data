@@ -1,0 +1,68 @@
+name: FEC Weekly Digest
+
+# Runs every Monday at ~09:07 America/New_York (13:07 UTC) and delivers a
+# Cloudbound-branded weekly digest of the family-entertainment-center sector
+# to Google Drive. Can also be run on demand from the Actions tab.
+on:
+  schedule:
+    - cron: "7 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fec-weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: claude/fec-market-research-iid49i
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          # extras needed only by the digest + delivery (kept out of app deps)
+          npm install --no-save @fontsource/dm-sans @fontsource/playfair-display googleapis
+          npx playwright install --with-deps chromium
+
+      - name: Refresh data + build digest
+        id: build
+        env:
+          # SEC EDGAR asks for a contact UA; override via repo variable if you like
+          MR_SEC_UA: ${{ vars.MR_SEC_UA }}
+        run: |
+          npx ts-node src/plugins/market-research/get.ts || echo "get had issues (continuing)"
+          npx ts-node src/plugins/market-research/process.ts || echo "process had issues (continuing)"
+          npx ts-node src/plugins/market-research/digest.ts
+
+      - name: Upload digest to Google Drive
+        env:
+          GDRIVE_SERVICE_ACCOUNT: ${{ secrets.GDRIVE_SERVICE_ACCOUNT }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: |
+          PDF="${{ steps.build.outputs.pdf }}"
+          if [ -z "$PDF" ]; then PDF=$(ls -t connector_data/market-research/weekly-digest-*.pdf 2>/dev/null | head -1); fi
+          if [ -z "$PDF" ]; then PDF=$(ls -t connector_data/market-research/weekly-digest-*.html 2>/dev/null | head -1); fi
+          echo "Delivering: $PDF"
+          node scripts/upload-to-drive.js "$PDF" "Cloudbound FEC Weekly Digest $(date +%Y-%m-%d)"
+
+      - name: Archive digest as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fec-weekly-digest
+          path: connector_data/market-research/weekly-digest-*
+          if-no-files-found: ignore
+          retention-days: 90
