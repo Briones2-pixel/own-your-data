@@ -1,0 +1,380 @@
+{
+  "report_window": "2026-W26 (refreshed 2026-06-26)",
+  "methodology": "Signals scored 1–10 on Importance (strategic weight), Confidence (source quality), Cloudbound Impact (relevance to AHRA/concept/operation), and Time Sensitivity (decay rate of action window). Composite = (Importance + Impact) × Confidence / 10. Cloudbound recommendation: organize the system around signals (concept / demand / capital / expansion / talent / marketing), not companies.",
+  "signals": [
+    {
+      "id": "S-2026-0001",
+      "category": "Capital",
+      "subcategory": "PE roll-up — kids FEC",
+      "headline": "Launch Entertainment (Silver Oak PE) now 30 units; signed Arlington TX (opened May 1 2026), Pensacola FL (Sept 2026), Centennial CO (early 2027); explicitly targeting mom-and-pop FEC roll-ups.",
+      "companies": [
+        "Launch Family Entertainment",
+        "Silver Oak Services Partners"
+      ],
+      "geo": "US",
+      "importance": 9,
+      "confidence": 9,
+      "impact": 9,
+      "time_sensitivity": "high — roll-up window is live; targets are the same single-unit operators in Cloudbound tracker",
+      "cloudbound_action": "Build a counter-roll-up thesis or sell-side narrative now. Launch is buying the exact small-operator cohort in tracker rows 40–205. Cloudbound must decide: compete as buyer, or pre-empt Launch on premium-format anchors.",
+      "sources": [
+        "https://launchfamilyentertainment.com/",
+        "https://www.silveroaksp.com/news-article/launch-accelerates-growth-with-investment-from-silver-oak-services-partners",
+        "https://www.franchisetimes.com/franchise_mergers_and_acquisitions/launch-entertainment-targets-mom-and-pops-following-pe-investment/article_f4def75a-b9d7-11ec-9fca-af982cdf35c9.html",
+        "https://www.franchising.com/amp/news/20260604_launch_family_entertainment_signs_lease_for_colorado_location.html"
+      ]
+    },
+    {
+      "id": "S-2026-0002",
+      "category": "Capital",
+      "subcategory": "PE roll-up — FEC",
+      "headline": "Five Star Parks & Attractions (Court Square Capital Partners / Fruition / Taubman) at 25 FECs in 12 states; acquired Scene75 (5 units), Malibu Jack's (3 KY units), Dubby's (5 MO/TN units), Celebration Station (5 units).",
+      "companies": [
+        "Five Star Parks & Attractions",
+        "Court Square Capital Partners",
+        "Fruition Partners",
+        "Taubman Capital"
+      ],
+      "geo": "US (12 states)",
+      "importance": 9,
+      "confidence": 10,
+      "impact": 8,
+      "time_sensitivity": "medium — already deployed; next acquisitions likely Q3-Q4 2026",
+      "cloudbound_action": "Map Five Star's deal cadence vs. tracker — they will likely scoop 1–2 of our tracker targets before EOY. Identify which tracker companies overlap their geography (OH, MO, KY, TN) and flag.",
+      "sources": [
+        "https://www.businesswire.com/news/home/20230515005167/en/Five-Star-Parks-Attractions-Acquires-AwardWinning-Scene75-Entertainment",
+        "https://www.prnewswire.com/news-releases/five-star-parks--attractions-acquires-family-entertainment-centers-in-seven-states-301494780.html",
+        "https://www.privsource.com/acquisitions/deal/five-star-parks-attractions-fruition-partners-acquires-dubby-s-attractions-and-celebration-station-RGSX3E",
+        "https://www.courtsquare.com/media/five-star-announces-strategic-capital-investment-from-court-square-capital-partners/"
+      ]
+    },
+    {
+      "id": "S-2026-0003",
+      "category": "Expansion",
+      "subcategory": "Direct competitor — toddler/play",
+      "headline": "Kids Empire crossed 100 units (tracker says 68). Q2 2026 openings: Escondido CA, North Bergen NJ, Milwaukee Bayshore. Franchise CAPEX $803K–$1.77M (large-format 15K sqft).",
+      "companies": [
+        "Kids Empire"
+      ],
+      "geo": "US — coastal/Midwest mall corridors",
+      "importance": 10,
+      "confidence": 10,
+      "impact": 10,
+      "time_sensitivity": "high — pace of opening is ~1 unit / 2 weeks",
+      "cloudbound_action": "Update tracker: Kids Empire location count is materially understated (68 → 100+). They are the #1 direct format competitor. Pull their full store locator + permit watch on next 5 leases. Decide if Cloudbound enters head-to-head in any of their target trade areas (Phoenix, Dallas-Frisco, NJ).",
+      "sources": [
+        "https://www.kidsempire.com/locations",
+        "https://www.kidsempire.com/blog/events/kids-empire-announces-grand-opening-of-new-indoor-playground-location-in-escondido-ca",
+        "https://www.kidsempire.com/blog/events/kids-empire-announces-grand-opening-of-new-indoor-playground-location-in-north-bergen-nj",
+        "https://www.connectcre.com/stories/kids-empires-national-expansion-includes-montclair/",
+        "https://franzy.com/franchises/kids-empire"
+      ]
+    },
+    {
+      "id": "S-2026-0004",
+      "category": "Concept",
+      "subcategory": "Mall-anchored experience retail",
+      "headline": "CAMP partnered with Simon Property Group on 2 new flagships (King of Prussia, Houston Galleria); 60%+ of revenue now from entertainment/tickets (was retail-led); raised $17M July 2025; cumulative funding $31M–$154M depending on source.",
+      "companies": [
+        "CAMP",
+        "Simon Property Group"
+      ],
+      "geo": "US (NYC/LA/Chi/Houston/Philly)",
+      "importance": 8,
+      "confidence": 8,
+      "impact": 9,
+      "time_sensitivity": "medium — pattern is replicable; Simon partnership template is public",
+      "cloudbound_action": "Use CAMP/Simon as the template for Cloudbound's mall-anchor pitch. Simon will entertain a category-defining play tenant. Their model proves the entertainment-flip works in retail real estate.",
+      "sources": [
+        "https://www.retaildive.com/news/family-experience-retailer-camp-to-open-2-new-locations/719321/",
+        "https://camp.marketing/2026-camp-marketing-revenue-strategy/",
+        "https://pitchbook.com/profiles/company/265245-85",
+        "https://news.crunchbase.com/startups/kids-retailer-camp-founded-by-buzzfeed-cmo-raises-10-5m-sec-filings-show/"
+      ]
+    },
+    {
+      "id": "S-2026-0005",
+      "category": "Concept",
+      "subcategory": "Play café + coworking convergence",
+      "headline": "New format emerging: play space + parent coworking lounge. Tiny's Corner (Tysons Corner mall, fall 2026, ~3,000 sqft), Think Lounge (Austin, on-site screen-free childcare), Little's Loft (Kirkwood MO, programming-heavy), Mulberry Lane variants in Northern VA.",
+      "companies": [
+        "Tiny's Corner",
+        "Think Lounge",
+        "Little's Loft",
+        "Mulberry Lane"
+      ],
+      "geo": "US — affluent suburbs + urban infill",
+      "importance": 7,
+      "confidence": 8,
+      "impact": 9,
+      "time_sensitivity": "medium — format is converging now; first-mover at scale wins narrative",
+      "cloudbound_action": "Cloudbound can absorb this format as a 'parent floor' module rather than ceding it. Validate via lease economics — these are small (3K sqft) and high-margin per visit. If Cloudbound adds a parent coworking deck to its flagship, it captures the dual-occupant pricing power.",
+      "sources": [
+        "https://www.ffxnow.com/2026/05/06/new-play-space-with-cafe-coming-to-tysons-corner-center-this-fall/",
+        "https://mythinklounge.com/",
+        "https://www.stlmag.com/family/littles-loft-play-cafe-kirk/",
+        "https://northernvirginiamag.com/family/2025/02/13/combine-work-and-play-at-alexandrias-new-play-cafe/"
+      ]
+    },
+    {
+      "id": "S-2026-0006",
+      "category": "Capital",
+      "subcategory": "PE roll-up — adjacent (preschool)",
+      "headline": "Primrose Schools acquired by Taurus Capital Partners; 500+ schools. PE-backed preschool consolidation continues (Goddard, Kiddie Academy, KinderCare, Learning Experience all PE-touched). Endeavor Schools has exited PE.",
+      "companies": [
+        "Primrose Schools",
+        "Taurus Capital Partners",
+        "Goddard",
+        "Kiddie Academy",
+        "KinderCare",
+        "Learning Experience",
+        "Endeavor Schools"
+      ],
+      "geo": "US",
+      "importance": 7,
+      "confidence": 9,
+      "impact": 7,
+      "time_sensitivity": "low — informational; bears on Cloudbound's adjacency strategy",
+      "cloudbound_action": "Add preschool/childcare to the master tracker as a new category. PE-backed preschools could be a Cloudbound JV channel (after-school programming, weekend events). Map overlap geography.",
+      "sources": [
+        "https://www.trysignalbase.com/news/acquisitions/primrose-schools-acquired-by-taurus-capital-partners-acquisition",
+        "https://pitchbook.com/profiles/company/10504-00",
+        "https://www.chalkbeat.org/colorado/2025/02/14/private-equity-in-child-care-alarms-lawmakers-and-parents/"
+      ]
+    },
+    {
+      "id": "S-2026-0007",
+      "category": "Capital",
+      "subcategory": "Equipment consolidation",
+      "headline": "Platinum Equity-owned PlayPower acquiring BCI Burke (commercial playground equipment) — Q2 2026 close. Supply-side consolidation; pricing leverage moves to buyer.",
+      "companies": [
+        "PlayPower",
+        "BCI Burke",
+        "Platinum Equity"
+      ],
+      "geo": "US",
+      "importance": 6,
+      "confidence": 10,
+      "impact": 7,
+      "time_sensitivity": "medium — closes Q2 2026; sourcing implications in H2",
+      "cloudbound_action": "If Cloudbound is committing to equipment specs in next 90 days, lock pricing before close. Identify secondary suppliers (KoalaPlay, Dreamland, Hanlin, Iplayco) for negotiating leverage.",
+      "sources": [
+        "https://www.platinumequity.com/news/playpower-to-acquire-bci-burke/",
+        "https://www.prnewswire.com/news-releases/platinum-equity-to-acquire-playpower-302555964.html"
+      ]
+    },
+    {
+      "id": "S-2026-0008",
+      "category": "Demand",
+      "subcategory": "Pricing + revenue model shift",
+      "headline": "Industry-wide pivot to membership/MRR ('gym model'); membership +18% revenue lift; responsive/dynamic pricing replacing flat hourly; short-term memberships for life-transition families (new baby, therapy, school change).",
+      "companies": [
+        "industry-wide"
+      ],
+      "geo": "Global / US",
+      "importance": 9,
+      "confidence": 7,
+      "impact": 10,
+      "time_sensitivity": "high — table stakes by EOY 2026; differentiator window is closing",
+      "cloudbound_action": "Cloudbound's pricing architecture should ship at launch with: (1) tiered membership w/ MRR, (2) life-transition short-term passes, (3) dynamic peak/off-peak. NOT a differentiator anymore — a baseline. Differentiate above this layer.",
+      "sources": [
+        "https://www.michelecaruana.com/blog/2026-play-cafe-trends",
+        "https://www.eluckyplay.com/2026-indoor-playground-trends-shaping-the-next-generation-of-play/",
+        "https://www.dreamlandplayground.com/blog/2026-indoor-playground-investment-guide-revolution-smart-growth-capital-efficiency"
+      ]
+    },
+    {
+      "id": "S-2026-0009",
+      "category": "Demand",
+      "subcategory": "Edutainment positioning premium",
+      "headline": "Edutainment segment $2B with 25% CAGR target by 2030. Parents increasingly require academic value alongside play. Cuemath secured $20M extension (10 languages). Disney/Universal/Merlin lead, but VC chasing skill-based hybrids.",
+      "companies": [
+        "Cuemath",
+        "Disney",
+        "Universal",
+        "Merlin Entertainment Group"
+      ],
+      "geo": "Global",
+      "importance": 8,
+      "confidence": 7,
+      "impact": 9,
+      "time_sensitivity": "medium — narrative is solidifying",
+      "cloudbound_action": "Cloudbound positioning copy must lead with developmental/educational outcomes, not just 'fun.' Build a STEM/literacy partnership at flagship (museums, Montessori, library systems) to lock the premium frame.",
+      "sources": [
+        "https://www.futuremarketinsights.com/reports/kids-recreational-services-market",
+        "https://tracxn.com/d/venture-capital/play-ventures/__7L1IG-zGYCIaqi2W5zm37MEttETi13ALXcSE8dQsUQw"
+      ]
+    },
+    {
+      "id": "S-2026-0010",
+      "category": "Expansion",
+      "subcategory": "Direct competitor — trampoline/hybrid",
+      "headline": "Uptown Jungle expanding across AZ/NV/CA/UT (~10 units); new North Phoenix unit opened. Hybrid trampoline + toddler + ball blaster format competing in same trade areas as Kids Empire.",
+      "companies": [
+        "Uptown Jungle"
+      ],
+      "geo": "AZ, NV, CA, UT",
+      "importance": 6,
+      "confidence": 8,
+      "impact": 7,
+      "time_sensitivity": "medium",
+      "cloudbound_action": "If Cloudbound's first site is in the Mountain West (AZ/NV/UT), it will share customers with Uptown Jungle. Audit their pricing, party packages, and Instagram engagement.",
+      "sources": [
+        "https://uptownjungle.com/",
+        "https://chandler.uptownjungle.com/indoor-playground-trampoline-park/"
+      ]
+    },
+    {
+      "id": "S-2026-0011",
+      "category": "Expansion",
+      "subcategory": "Franchise scaling",
+      "headline": "Cheeky Monkeys grew 200% over 3 years to 9 US units (Dallas, Houston base); targeting FL via National Franchise Show Tampa. $40K franchise fee, $598K–$1.2M total CAPEX, 6% royalty.",
+      "companies": [
+        "Cheeky Monkeys"
+      ],
+      "geo": "US — TX growing into FL",
+      "importance": 5,
+      "confidence": 8,
+      "impact": 5,
+      "time_sensitivity": "low — small operator",
+      "cloudbound_action": "Watch as a franchise economics benchmark — their CAPEX and royalty band are reference for Cloudbound's franchise FDD math.",
+      "sources": [
+        "https://peersense.com/franchise/cheeky-monkeys",
+        "https://www.entrepreneur.com/franchises/directory/cheeky-monkeys/336459"
+      ]
+    },
+    {
+      "id": "S-2026-0012",
+      "category": "Industry",
+      "subcategory": "Trade event calendar",
+      "headline": "IAAPA Expo 2026 Nov 16–20 in Orlando — nearly 50% larger than 2025 (record-breaking). FEC Summit 2026 already concluded Feb 1–3 in Glendale AZ.",
+      "companies": [
+        "IAAPA"
+      ],
+      "geo": "Orlando",
+      "importance": 7,
+      "confidence": 10,
+      "impact": 8,
+      "time_sensitivity": "medium — 5 months out, plan attendance + meetings now",
+      "cloudbound_action": "Reserve booth or executive meeting suite at IAAPA Expo Nov 2026. This is where Five Star, Launch, PE buyers, and equipment OEMs all converge. Single best concentrated diligence + sourcing event of the year.",
+      "sources": [
+        "https://iaapa.org/about/press-room/press-release-iaapa-expo-2025-conclues-with-record-breaking-attendance",
+        "https://iaapa.org/expos-and-events/iaapa-expo"
+      ]
+    },
+    {
+      "id": "S-2026-0013",
+      "category": "Concept",
+      "subcategory": "Stagnation signal",
+      "headline": "KidZania still has 1 US location (Frisco TX) vs. 28 globally; no announced US expansion. Premier global edutainment brand has not cracked US scale despite 100K sqft Dallas flagship since 2021.",
+      "companies": [
+        "KidZania"
+      ],
+      "geo": "Global — US single site",
+      "importance": 7,
+      "confidence": 9,
+      "impact": 8,
+      "time_sensitivity": "low — opportunity to claim the role-play edutainment narrative in US",
+      "cloudbound_action": "If Cloudbound wants the 'role-play city' narrative slot, the door is open. KidZania has not scaled US in 5 years. Either acquire/license the format, or build a homegrown variant before someone else does.",
+      "sources": [
+        "https://dallas.kidzaniausa.com/",
+        "https://www.tripadvisor.com/Attraction_Review-g55870-d19269708-Reviews-KidZania_Dallas-Frisco_Texas.html",
+        "https://www.visitfrisco.com/things-to-do/kidzania/2127"
+      ]
+    },
+    {
+      "id": "S-2026-0014",
+      "category": "Marketing",
+      "subcategory": "Content format",
+      "headline": "Indoor playground social engagement skews to short-form: obstacle runs, climbing 'playground hacks,' group-tag variations, UGC reposted by venues. Visually dynamic + easy-to-replicate clips outperform branded content.",
+      "companies": [
+        "industry-wide"
+      ],
+      "geo": "Global",
+      "importance": 5,
+      "confidence": 6,
+      "impact": 7,
+      "time_sensitivity": "ongoing",
+      "cloudbound_action": "Cloudbound launch playbook: every attraction designed with a 'TikTok shot' built in (a hook camera angle, a wow moment under 10 sec). UGC reposting program from day 1. Bake the content engine into the venue architecture.",
+      "sources": [
+        "https://worldsofwow.com/blog/step-6-marketing-your-new-indoor-playground",
+        "https://www.creativesystems.com/tiktok-playgrounds/"
+      ]
+    }
+  ],
+  "tracker_corrections": [
+    {
+      "company": "Kids Empire USA LLC",
+      "field": "locations",
+      "old": 68,
+      "new": "100+",
+      "source": "https://www.kidsempire.com/locations",
+      "confidence": 10
+    }
+  ],
+  "new_competitors_to_add": [
+    {
+      "name": "Launch Family Entertainment",
+      "category": "FEC / Trampoline",
+      "locations": 30,
+      "owner": "Silver Oak Services Partners (PE)",
+      "priority": "Tier 1"
+    },
+    {
+      "name": "Five Star Parks & Attractions",
+      "category": "FEC roll-up",
+      "locations": 25,
+      "owner": "Court Square Capital Partners",
+      "priority": "Tier 1"
+    },
+    {
+      "name": "Scene75 Entertainment",
+      "category": "FEC (subsidiary of Five Star)",
+      "locations": 5,
+      "owner": "Five Star / Court Square",
+      "priority": "Tier 2"
+    },
+    {
+      "name": "Malibu Jack's Indoor Theme Parks",
+      "category": "FEC (subsidiary of Five Star)",
+      "locations": 3,
+      "owner": "Five Star / Court Square",
+      "priority": "Tier 2"
+    },
+    {
+      "name": "CAMP",
+      "category": "Experiential retail / family entertainment",
+      "locations": "~10+",
+      "owner": "VC-backed",
+      "priority": "Tier 1"
+    },
+    {
+      "name": "Tiny's Corner",
+      "category": "Play café (mall-anchored)",
+      "locations": 1,
+      "owner": "private",
+      "priority": "Tier 3 — emerging format"
+    },
+    {
+      "name": "Think Lounge",
+      "category": "Play café + parent coworking",
+      "locations": 1,
+      "owner": "private",
+      "priority": "Tier 3 — emerging format"
+    },
+    {
+      "name": "Primrose Schools",
+      "category": "Preschool (adjacent)",
+      "locations": "500+",
+      "owner": "Taurus Capital Partners (PE)",
+      "priority": "Tier 2 — adjacency"
+    },
+    {
+      "name": "PlayPower / BCI Burke",
+      "category": "Equipment supplier (adjacent)",
+      "locations": "n/a",
+      "owner": "Platinum Equity",
+      "priority": "Tier 2 — supply chain"
+    }
+  ]
+}

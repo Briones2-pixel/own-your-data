@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudbound Competitive Intelligence — Signal Dashboard</title>
+<style>
+  :root {
+    --ink:#0b0d10; --bg:#fbfaf7; --muted:#5a5e66; --rule:#e3e0d8;
+    --accent:#c4361b;
+    --capital:#1b3a5b; --expansion:#2f6b3a; --concept:#7a3a8a;
+    --demand:#b97a2b; --marketing:#a32717; --industry:#444; --talent:#0d6b6b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif}
+  header{background:#fff;border-bottom:1px solid var(--rule);padding:18px 28px}
+  header h1{margin:0;font:600 22px/1.2 "Georgia",serif}
+  header .sub{color:var(--muted);font-size:12.5px;margin-top:3px}
+  .layout{max-width:1280px;margin:0 auto;padding:24px 28px;display:grid;grid-template-columns:240px 1fr;gap:28px}
+  aside h3{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:18px 0 6px}
+  aside select,aside input{width:100%;padding:6px 8px;font:13px inherit;border:1px solid var(--rule);border-radius:3px;background:#fff;margin-bottom:8px}
+  aside button{width:100%;padding:7px;border:1px solid var(--rule);background:#fff;border-radius:3px;cursor:pointer;font:13px inherit;margin-top:6px}
+  aside button:hover{background:#f6f3ec}
+  .summary{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:20px}
+  .kpi{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:10px 12px}
+  .kpi .n{font:600 22px/1 "Georgia",serif;font-variant-numeric:tabular-nums}
+  .kpi .l{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:4px}
+  .swimlanes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .lane{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:14px 16px}
+  .lane h2{margin:0 0 8px;font:600 14px/1.2 -apple-system,sans-serif;letter-spacing:.02em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+  .lane h2 .count{float:right;color:var(--ink);font-variant-numeric:tabular-nums}
+  .signal{padding:10px 0;border-bottom:1px dashed var(--rule)}
+  .signal:last-child{border-bottom:0}
+  .signal .h{font-weight:600;font-size:13.5px;margin-bottom:4px}
+  .signal .meta{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .tag{display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#fff;padding:1px 6px;border-radius:2px;margin-right:5px}
+  .t-capital{background:var(--capital)}.t-expansion{background:var(--expansion)}.t-concept{background:var(--concept)}
+  .t-demand{background:var(--demand)}.t-marketing{background:var(--marketing)}.t-industry{background:var(--industry)}.t-talent{background:var(--talent)}
+  .score{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .score b{color:var(--ink)}
+  .heat{display:inline-block;width:42px;height:6px;border-radius:1px;background:linear-gradient(90deg,#dfd9c9,var(--accent));vertical-align:middle;margin-left:4px}
+  .heat>span{display:block;height:100%;border-radius:1px;background:var(--accent)}
+  details>summary{cursor:pointer;font-size:12px;color:var(--muted);margin-top:4px;list-style:none}
+  details>summary::before{content:"▸ ";color:var(--muted)}
+  details[open]>summary::before{content:"▾ "}
+  .action{margin-top:6px;padding:6px 8px;background:#f6f3ec;border-radius:3px;font-size:12.5px;line-height:1.45}
+  .src{font-size:11px;color:var(--muted);margin-top:4px;word-break:break-all}
+  .src a{color:var(--muted);text-decoration:none;border-bottom:1px dotted}
+  .hide{display:none !important}
+  .nav{font-size:12px;color:var(--muted)}
+  .nav a{color:var(--ink);margin:0 8px 0 0;text-decoration:none;border-bottom:1px dotted}
+  @media(max-width:900px){.layout{grid-template-columns:1fr}.summary{grid-template-columns:repeat(3,1fr)}.swimlanes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cloudbound · Competitive Intelligence Dashboard</h1>
+  <div class="sub">Organized by signal type (not company). Concept · Demand · Capital · Expansion · Talent · Marketing.
+    &nbsp;·&nbsp; <span class="nav"><a href="../reports/weekly.html">Weekly report →</a><a href="market-map.html">Market map →</a><a href="trends.html">Trends →</a></span>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <h3>Filter</h3>
+    <label>Signal type</label>
+    <select id="f-cat">
+      <option value="">All</option>
+      <option>Capital</option><option>Expansion</option><option>Concept</option>
+      <option>Demand</option><option>Marketing</option><option>Industry</option><option>Talent</option>
+    </select>
+    <label>Geography</label>
+    <select id="f-geo">
+      <option value="">All</option>
+      <option>US</option><option>Mountain West</option><option>Texas</option><option>Florida</option><option>Global</option>
+    </select>
+    <label>Min importance</label>
+    <select id="f-imp">
+      <option value="0">Any</option><option value="5">5+</option><option value="7">7+</option><option value="9">9+</option>
+    </select>
+    <label>Time sensitivity</label>
+    <select id="f-time">
+      <option value="">Any</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option>
+    </select>
+    <label>Search</label>
+    <input id="f-q" type="text" placeholder="Company, keyword…">
+    <button id="reset">Reset</button>
+
+    <h3 style="margin-top:24px">Master tracker</h3>
+    <div class="score">205 companies · 1 industry segment · 9 additions queued · 1 correction queued</div>
+    <div style="margin-top:6px"><a href="../data/competitors_master.csv" style="font-size:12px;color:var(--accent)">competitors_master.csv ↓</a></div>
+    <div style="margin-top:2px"><a href="../data/competitors_master.json" style="font-size:12px;color:var(--accent)">competitors_master.json ↓</a></div>
+    <div style="margin-top:2px"><a href="../data/signals/2026-W26-signals.json" style="font-size:12px;color:var(--accent)">2026-W26-signals.json ↓</a></div>
+  </aside>
+
+  <main>
+    <div class="summary" id="summary"></div>
+
+    <div class="swimlanes" id="lanes"></div>
+  </main>
+</div>
+
+<script>
+const SIGNALS = []; // hydrated below
+
+// Live feed: read latest.json (refreshed on schedule); fall back to W26.
+fetch("../data/signals/latest.json?t=" + Date.now())
+  .then(r => r.ok ? r.json() : fetch("../data/signals/2026-W26-signals.json").then(r => r.json()))
+  .then(d => {
+    SIGNALS.push(...d.signals);
+    const sub = document.querySelector("header .sub");
+    if (d.report_window && sub) sub.insertAdjacentHTML("beforeend", " &nbsp;·&nbsp; <b>" + d.report_window + "</b>");
+    renderKPIs(); render();
+    setInterval(() => location.reload(), 10 * 60 * 1000); // re-pull every 10 min
+  })
+  .catch(() => {
+    document.getElementById("lanes").innerHTML =
+      '<div class="lane"><h2>Note</h2><p style="font-size:13px">Signals feed not reachable yet. It publishes on the first scheduled refresh (<code>data/signals/latest.json</code>).</p></div>';
+  });
+
+function renderKPIs() {
+  const order = ["Capital","Expansion","Concept","Demand","Marketing","Industry","Talent"];
+  const counts = {};
+  SIGNALS.forEach(s => counts[s.category] = (counts[s.category] || 0) + 1);
+  let html = '<div class="kpi"><div class="n">' + SIGNALS.length + '</div><div class="l">Signals this week</div></div>';
+  order.forEach(c => { if (counts[c]) html += '<div class="kpi"><div class="n">' + counts[c] + '</div><div class="l">' + c + ' signals</div></div>'; });
+  document.getElementById("summary").innerHTML = html;
+}
+
+const lanes = ["Capital","Expansion","Concept","Demand","Marketing","Industry","Talent"];
+const cls = c => "t-" + c.toLowerCase();
+
+function render() {
+  const cat = document.getElementById("f-cat").value;
+  const geo = document.getElementById("f-geo").value.toLowerCase();
+  const imp = +document.getElementById("f-imp").value || 0;
+  const time = document.getElementById("f-time").value;
+  const q = document.getElementById("f-q").value.trim().toLowerCase();
+
+  const filtered = SIGNALS.filter(s => {
+    if (cat && s.category !== cat) return false;
+    if (imp && s.importance < imp) return false;
+    if (geo && !(s.geo || "").toLowerCase().includes(geo)) return false;
+    if (time && !(s.time_sensitivity || "").toLowerCase().startsWith(time)) return false;
+    if (q) {
+      const hay = [s.headline, (s.companies||[]).join(" "), s.subcategory, s.cloudbound_action].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const byCat = Object.fromEntries(lanes.map(l => [l, []]));
+  filtered.forEach(s => { if (byCat[s.category]) byCat[s.category].push(s); });
+
+  document.getElementById("lanes").innerHTML = lanes.map(lane => {
+    const items = byCat[lane];
+    if (!items.length) return "";
+    return `
+      <section class="lane">
+        <h2>${lane} <span class="count">${items.length}</span></h2>
+        ${items.map(s => `
+          <div class="signal">
+            <div class="h"><span class="tag ${cls(s.category)}">${s.category}</span>${s.headline}</div>
+            <div class="meta">${(s.companies||[]).join(" · ")} · ${s.geo} · ${s.subcategory}</div>
+            <div class="score">Imp <b>${s.importance}</b> · Conf <b>${s.confidence}</b> · Impact <b>${s.impact}</b> · Time <b>${s.time_sensitivity.split("—")[0].trim()}</b>
+              <span class="heat"><span style="width:${(s.importance+s.impact)*5}%"></span></span>
+            </div>
+            <details>
+              <summary>Cloudbound action + sources</summary>
+              <div class="action">${s.cloudbound_action}</div>
+              <div class="src">${(s.sources||[]).map(u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`).join("<br>")}</div>
+            </details>
+          </div>
+        `).join("")}
+      </section>
+    `;
+  }).join("");
+}
+
+["f-cat","f-geo","f-imp","f-time","f-q"].forEach(id =>
+  document.getElementById(id).addEventListener("input", render));
+document.getElementById("reset").addEventListener("click", () => {
+  ["f-cat","f-geo","f-time","f-q"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("f-imp").value = "0";
+  render();
+});
+</script>
+</body>
+</html>
