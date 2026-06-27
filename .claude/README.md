@@ -55,3 +55,13 @@ claude plugin marketplace add anthropics/financial-services
 claude plugin install financial-analysis@claude-for-financial-services
 # ...repeat for each plugin, or just trust the repo folder to install all enabled ones
 ```
+
+## Local subagents
+
+In addition to the marketplace plugins above, this repo ships its own
+project-scoped subagents in [`agents/`](./agents). They load automatically when
+Claude Code opens the folder.
+
+| Subagent | What it does |
+|----------|--------------|
+| `deal-analyst` | Sit-with-the-materials transaction analyst: screen targets, review CIMs/data-room docs, sanity-check valuations, draft or red-team deal memos, find precedents. Fills the gap between the marketplace's workflow plugins (`pitch-agent`, `model-builder`, `earnings-reviewer`) and ad-hoc diligence work. |
