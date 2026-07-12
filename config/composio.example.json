@@ -1,0 +1,5 @@
+{
+  "note": "Copy to config/composio.json (gitignored). The API key itself lives in .env as COMPOSIO_API_KEY, NOT here.",
+  "enabled": false,
+  "connectedAccounts": []
+}
